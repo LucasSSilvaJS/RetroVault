@@ -6,3 +6,5 @@ Flutter
 Dart
 # Público-alvo
 Colecionadores
+# Parceria
+Vendedores de antiguidades
