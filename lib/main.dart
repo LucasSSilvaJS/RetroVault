@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'pages/homepage.dart';
 import 'pages/profileimg.dart';
+import 'pages/mainpage.dart';
 
 void main() {
   runApp(MyApp());
@@ -16,6 +17,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/': (context) => HomePage(),
         '/profileimg': (context) => ProfileImg(),
+        '/mainpage': (context) => MainPage(),
       },
     );
   }
