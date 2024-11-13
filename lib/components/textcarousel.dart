@@ -24,7 +24,7 @@ class _TextCarouselState extends State<TextCarousel> {
         CarouselSlider(
           carouselController: _carouselController,
           options: CarouselOptions(
-            height: 300.0,
+            height: 200.0,
             autoPlay: true,
             enableInfiniteScroll: true,
             onPageChanged: (index, reason) {
