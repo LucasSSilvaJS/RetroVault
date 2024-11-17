@@ -62,7 +62,9 @@ class LoginPage extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.fromLTRB(20.0, 40.0, 20.0, 0),
                   child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/mainpage');
+                    },
                     child: const Text(
                       'Entrar',
                       style: TextStyle(
@@ -95,7 +97,9 @@ class LoginPage extends StatelessWidget {
                         ),
                       ),
                       TextButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.pushNamed(context, '/profileimg');
+                        },
                         child: const Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [

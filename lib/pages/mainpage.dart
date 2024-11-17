@@ -311,9 +311,9 @@ class MainPage extends StatelessWidget {
 }
 
 class Title extends StatelessWidget {
-  String? name;
+  final String? name;
 
-  Title({super.key, required this.name});
+  const Title({super.key, required this.name});
 
   @override
   Widget build(BuildContext context) {
