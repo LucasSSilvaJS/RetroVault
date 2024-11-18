@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:retrovault/pages/productview.dart';
 import 'pages/homepage.dart';
 import 'pages/loginpage.dart';
 import 'pages/profileimg.dart';
@@ -20,6 +21,7 @@ class MyApp extends StatelessWidget {
         '/profileimg': (context) => ProfileImg(),
         '/mainpage': (context) => MainPage(),
         '/login': (context) => LoginPage(),
+        '/productview': (context) => ProductView(),
       },
     );
   }
