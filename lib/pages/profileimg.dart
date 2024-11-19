@@ -113,7 +113,9 @@ class _ProfileImgState extends State<ProfileImg> {
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 20.0),
                   child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/mainpage');
+                    },
                     child: const Text(
                       'Salvar',
                       style: TextStyle(
@@ -133,7 +135,9 @@ class _ProfileImgState extends State<ProfileImg> {
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 20.0),
                   child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/mainpage');
+                    },
                     child: const Text(
                       'Pular',
                       style: TextStyle(
