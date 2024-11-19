@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
-class LoginPage extends StatelessWidget {
+class SignPage extends StatelessWidget {
+  const SignPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,6 +26,21 @@ class LoginPage extends StatelessWidget {
                   child: Image.asset(
                     width: 200,
                     'assets/img/Logo.png',
+                  ),
+                ),
+
+                // CAMPO NOME USUÁRIO
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(20, 18, 20, 9),
+                  child: TextFormField(
+                    decoration: InputDecoration(
+                      labelText: 'Nome de Usuário',
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(25),
+                      ),
+                      filled: true,
+                      fillColor: Colors.white,
+                    ),
                   ),
                 ),
 
@@ -58,26 +75,42 @@ class LoginPage extends StatelessWidget {
                   ),
                 ),
 
-                // BOTÃO "ENTRAR"
+                // CAMPO CONFIRMAR SENHA
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(20, 18, 20, 9),
+                  child: TextFormField(
+                    decoration: InputDecoration(
+                      labelText: 'Confirmar senha',
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(25),
+                      ),
+                      filled: true,
+                      fillColor: Colors.white,
+                    ),
+                    obscureText: true,
+                  ),
+                ),
+
+                // BOTÃO "CADASTRAR"
                 Padding(
                   padding: const EdgeInsets.fromLTRB(20.0, 40.0, 20.0, 0),
                   child: ElevatedButton(
                     onPressed: () {
-                      Navigator.pushNamed(context, '/mainpage');
+                      Navigator.pushNamed(context, '/profileimg');
                     },
+                    style: ElevatedButton.styleFrom(
+                        backgroundColor: const Color(0XFF00B2C9),
+                        minimumSize: const Size(double.infinity, 50.0),
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10.0))),
                     child: const Text(
-                      'Entrar',
+                      'Próximo',
                       style: TextStyle(
                         color: Colors.white,
                         fontWeight: FontWeight.bold,
                         fontSize: 20.0,
                       ),
                     ),
-                    style: ElevatedButton.styleFrom(
-                        backgroundColor: Color(0XFF00B2C9),
-                        minimumSize: Size(double.infinity, 50.0),
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10.0))),
                   ),
                 ),
 
@@ -87,31 +120,21 @@ class LoginPage extends StatelessWidget {
                   child: Column(
                     children: [
                       TextButton(
-                        onPressed: () {},
-                        child: const Text(
-                          'Esqueci minha senha',
-                          style: TextStyle(
-                            fontSize: 16,
-                            color: Color(0XFFFFFFFF),
-                          ),
-                        ),
-                      ),
-                      TextButton(
                         onPressed: () {
-                          Navigator.pushNamed(context, '/sign');
+                          Navigator.pushNamed(context, '/login');
                         },
                         child: const Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(
-                              'Não possui uma conta? ',
+                              'Já possui uma conta? ',
                               style: TextStyle(
                                 fontSize: 16,
                                 color: Color(0XFFFFFFFF),
                               ),
                             ),
                             Text(
-                              'Cadastre-se!',
+                              'Entrar!',
                               style: TextStyle(
                                 fontSize: 16,
                                 color: Color(0xFFFF9215),
