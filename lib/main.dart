@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:retrovault/pages/productview.dart';
+import 'package:retrovault/pages/shoppingcart.dart';
 import 'package:retrovault/pages/signpage.dart';
 import 'package:retrovault/pages/wishlist.dart';
 import 'pages/homepage.dart';
@@ -26,6 +27,7 @@ class MyApp extends StatelessWidget {
         '/sign': (cotext) => SignPage(),
         '/productview': (context) => ProductView(),
         '/wishlist': (context) => WishList(),
+        '/shoppingcart': (context) => ShoppingCart(),
       },
     );
   }

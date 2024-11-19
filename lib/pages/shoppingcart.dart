@@ -4,12 +4,12 @@ import 'package:flutter/material.dart';
 import 'package:retrovault/components/listmenu.dart';
 import 'package:retrovault/components/wishlistitem.dart';
 
-class WishList extends StatefulWidget {
+class ShoppingCart extends StatefulWidget {
   @override
-  _WishListState createState() => _WishListState();
+  _ShoppingCartState createState() => _ShoppingCartState();
 }
 
-class _WishListState extends State<WishList> {
+class _ShoppingCartState extends State<ShoppingCart> {
 
   final ScrollController _scrollController = ScrollController();
 
@@ -141,7 +141,7 @@ class _WishListState extends State<WishList> {
                               ).createShader(bounds);
                             },
                             child: Text(
-                              'Lista de desejos',
+                              'Carrinho de compras',
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 24,
@@ -175,7 +175,7 @@ class _WishListState extends State<WishList> {
                           ),
                           ElevatedButton(
                             onPressed: (){}, 
-                            child: Text('Mover para o carrinho', style: TextStyle(color: Colors.white),),
+                            child: Text('Comprar', style: TextStyle(color: Colors.white),),
                             style: ButtonStyle(
                               minimumSize: WidgetStatePropertyAll(Size(double.infinity, 50),),
                               backgroundColor: WidgetStatePropertyAll(Color(0xFF0E7391),),
@@ -184,7 +184,7 @@ class _WishListState extends State<WishList> {
                           SizedBox(height: 10.0,),
                           ElevatedButton(
                             onPressed: (){}, 
-                            child: Text('Remover da lista de desejos', style: TextStyle(color: Colors.white),),
+                            child: Text('Remover do carrinho', style: TextStyle(color: Colors.white),),
                             style: ButtonStyle(
                               minimumSize: WidgetStatePropertyAll(Size(double.infinity, 50),),
                               backgroundColor: WidgetStatePropertyAll(Color(0xFFE07BB2),),
