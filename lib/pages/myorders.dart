@@ -226,11 +226,31 @@ class _MyOrdersState extends State<MyOrders> {
                 ),
               ),
             ),
-            ListMenu(title: 'Minhas compras'),
-            ListMenu(title: 'Carrinho de compra'),
-            ListMenu(title: 'Lista de desejos'),
-            ListMenu(title: 'Dados pessoais'),
-            ListMenu(title: 'Sair', color: Colors.red),
+            ListMenu(
+              title: 'Página inicial',
+              to: '/mainpage',
+            ),
+            ListMenu(
+              title: 'Minhas compras',
+              to: '/myorders',
+            ),
+            ListMenu(
+              title: 'Carrinho de compra',
+              to: '/shoppingcart',
+            ),
+            ListMenu(
+              title: 'Lista de desejos',
+              to: '/wishlist',
+            ),
+            ListMenu(
+              title: 'Dados pessoais',
+              to: '/perfilpage',
+            ),
+            ListMenu(
+              title: 'Sair',
+              color: Colors.red,
+              to: '/login',
+            ),
           ],
         ),
       ),

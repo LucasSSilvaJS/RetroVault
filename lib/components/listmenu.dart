@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 
 class ListMenu extends StatelessWidget {
   final String? title;
+  final String? to;
   final Color? color;
 
   const ListMenu({
     required this.title,
+    required this.to,
     this.color = const Color(0xFF474646),
   });
 
@@ -26,7 +28,7 @@ class ListMenu extends StatelessWidget {
         ),
         onTap: () {
           // Fechar o Drawer
-          Navigator.of(context).pop(); // Fecha o Drawer
+          Navigator.pushNamed(context, to!); // Fecha o Drawer
         },
       ),
     );

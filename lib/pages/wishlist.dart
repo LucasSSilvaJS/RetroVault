@@ -10,7 +10,6 @@ class WishList extends StatefulWidget {
 }
 
 class _WishListState extends State<WishList> {
-
   final ScrollController _scrollController = ScrollController();
 
   @override
@@ -52,11 +51,31 @@ class _WishListState extends State<WishList> {
                 ),
               ),
             ),
-            ListMenu(title: 'Minhas compras'),
-            ListMenu(title: 'Carrinho de compra'),
-            ListMenu(title: 'Lista de desejos'),
-            ListMenu(title: 'Dados pessoais'),
-            ListMenu(title: 'Sair', color: Colors.red),
+            ListMenu(
+              title: 'Página inicial',
+              to: '/mainpage',
+            ),
+            ListMenu(
+              title: 'Minhas compras',
+              to: '/myorders',
+            ),
+            ListMenu(
+              title: 'Carrinho de compra',
+              to: '/shoppingcart',
+            ),
+            ListMenu(
+              title: 'Lista de desejos',
+              to: '/wishlist',
+            ),
+            ListMenu(
+              title: 'Dados pessoais',
+              to: '/perfilpage',
+            ),
+            ListMenu(
+              title: 'Sair',
+              color: Colors.red,
+              to: '/login',
+            ),
           ],
         ),
       ),
@@ -157,37 +176,71 @@ class _WishListState extends State<WishList> {
                           SizedBox(
                             height: 20.0,
                           ),
-                          WishListItem(title: 'The Smiths - The queen is dead', imgTxt: 'assets/img/smiths1.png', price: 'R\$ 150,00',),
+                          WishListItem(
+                            title: 'The Smiths - The queen is dead',
+                            imgTxt: 'assets/img/smiths1.png',
+                            price: 'R\$ 150,00',
+                          ),
                           SizedBox(
                             height: 10.0,
                           ),
-                          WishListItem(title: 'Daft Punk', imgTxt: 'assets/img/daftpunk.png', price: 'R\$ 140,00',),
+                          WishListItem(
+                            title: 'Daft Punk',
+                            imgTxt: 'assets/img/daftpunk.png',
+                            price: 'R\$ 140,00',
+                          ),
                           SizedBox(
                             height: 10.0,
                           ),
-                          WishListItem(title: 'Earth, Wind & Fire', imgTxt: 'assets/img/earthwindandfire.png', price: 'R\$ 140,00',),
+                          WishListItem(
+                            title: 'Earth, Wind & Fire',
+                            imgTxt: 'assets/img/earthwindandfire.png',
+                            price: 'R\$ 140,00',
+                          ),
                           SizedBox(
                             height: 10.0,
                           ),
-                          WishListItem(title: 'Michael Jackson', imgTxt: 'assets/img/michaeljackson.png', price: 'R\$ 140,00',),
+                          WishListItem(
+                            title: 'Michael Jackson',
+                            imgTxt: 'assets/img/michaeljackson.png',
+                            price: 'R\$ 140,00',
+                          ),
                           SizedBox(
                             height: 20.0,
                           ),
                           ElevatedButton(
-                            onPressed: (){}, 
-                            child: Text('Mover para o carrinho', style: TextStyle(color: Colors.white),),
+                            onPressed: () {
+                              Navigator.pushNamed(context, '/shoppingcart');
+                            },
+                            child: Text(
+                              'Mover para o carrinho',
+                              style: TextStyle(color: Colors.white),
+                            ),
                             style: ButtonStyle(
-                              minimumSize: WidgetStatePropertyAll(Size(double.infinity, 50),),
-                              backgroundColor: WidgetStatePropertyAll(Color(0xFF0E7391),),
+                              minimumSize: WidgetStatePropertyAll(
+                                Size(double.infinity, 50),
+                              ),
+                              backgroundColor: WidgetStatePropertyAll(
+                                Color(0xFF0E7391),
+                              ),
                             ),
                           ),
-                          SizedBox(height: 10.0,),
+                          SizedBox(
+                            height: 10.0,
+                          ),
                           ElevatedButton(
-                            onPressed: (){}, 
-                            child: Text('Remover da lista de desejos', style: TextStyle(color: Colors.white),),
+                            onPressed: () {},
+                            child: Text(
+                              'Remover da lista de desejos',
+                              style: TextStyle(color: Colors.white),
+                            ),
                             style: ButtonStyle(
-                              minimumSize: WidgetStatePropertyAll(Size(double.infinity, 50),),
-                              backgroundColor: WidgetStatePropertyAll(Color(0xFFE07BB2),),
+                              minimumSize: WidgetStatePropertyAll(
+                                Size(double.infinity, 50),
+                              ),
+                              backgroundColor: WidgetStatePropertyAll(
+                                Color(0xFFE07BB2),
+                              ),
                             ),
                           ),
                         ],
@@ -203,4 +256,3 @@ class _WishListState extends State<WishList> {
     );
   }
 }
-

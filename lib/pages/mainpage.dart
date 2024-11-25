@@ -42,11 +42,31 @@ class MainPage extends StatelessWidget {
                 ),
               ),
             ),
-            ListMenu(title: 'Minhas compras'),
-            ListMenu(title: 'Carrinho de compra'),
-            ListMenu(title: 'Lista de desejos'),
-            ListMenu(title: 'Dados pessoais'),
-            ListMenu(title: 'Sair', color: Colors.red),
+            ListMenu(
+              title: 'Página inicial',
+              to: '/mainpage',
+            ),
+            ListMenu(
+              title: 'Minhas compras',
+              to: '/myorders',
+            ),
+            ListMenu(
+              title: 'Carrinho de compra',
+              to: '/shoppingcart',
+            ),
+            ListMenu(
+              title: 'Lista de desejos',
+              to: '/wishlist',
+            ),
+            ListMenu(
+              title: 'Dados pessoais',
+              to: '/perfilpage',
+            ),
+            ListMenu(
+              title: 'Sair',
+              color: Colors.red,
+              to: '/login',
+            ),
           ],
         ),
       ),
@@ -127,11 +147,20 @@ class MainPage extends StatelessWidget {
             StoreCarousel(
               items: [
                 {
+                  'title': 'The Smiths - The Queen is Dead',
+                  'price': 'R\$ 150.00',
+                  'reviews': '598',
+                  'sales': '3k',
+                  'rating': 5,
+                  'img': 'assets/img/smiths1.png'
+                },
+                {
                   'title': 'The Dark Side of the Moon - Pink Floyd',
                   'price': 'R\$ 350.00',
                   'reviews': '850',
                   'sales': '5k',
                   'rating': 5,
+                  'img': 'assets/img/pinkfloyd.png'
                 },
                 {
                   'title': 'Abbey Road - The Beatles',
@@ -139,6 +168,7 @@ class MainPage extends StatelessWidget {
                   'reviews': '1.2k',
                   'sales': '6k',
                   'rating': 5,
+                  'img': 'assets/img/abbeyroad.png'
                 },
                 {
                   'title': 'Back to Black - Amy Winehouse',
@@ -146,6 +176,7 @@ class MainPage extends StatelessWidget {
                   'reviews': '750',
                   'sales': '3.5k',
                   'rating': 4,
+                  'img': 'assets/img/backtoblack.png'
                 },
                 {
                   'title': 'Thriller - Michael Jackson',
@@ -153,6 +184,7 @@ class MainPage extends StatelessWidget {
                   'reviews': '1.8k',
                   'sales': '8k',
                   'rating': 5,
+                  'img': 'assets/img/thriller.png'
                 },
                 {
                   'title': 'Nevermind - Nirvana',
@@ -160,6 +192,7 @@ class MainPage extends StatelessWidget {
                   'reviews': '950',
                   'sales': '4k',
                   'rating': 4,
+                  'img': 'assets/img/nevermind.png'
                 },
                 {
                   'title': 'Rumours - Fleetwood Mac',
@@ -167,6 +200,7 @@ class MainPage extends StatelessWidget {
                   'reviews': '600',
                   'sales': '2.8k',
                   'rating': 5,
+                  'img': 'assets/img/rumours.png'
                 },
                 {
                   'title': 'Hotel California - Eagles',
@@ -174,6 +208,7 @@ class MainPage extends StatelessWidget {
                   'reviews': '1k',
                   'sales': '5k',
                   'rating': 5,
+                  'img': 'assets/img/hotelcalifornia.png'
                 },
               ],
             ),
@@ -194,6 +229,7 @@ class MainPage extends StatelessWidget {
                   'reviews': '2k',
                   'sales': '12k',
                   'rating': 5,
+                  'img': 'assets/img/supermariones.png'
                 },
                 {
                   'title': 'The Legend of Zelda - NES',
@@ -201,6 +237,7 @@ class MainPage extends StatelessWidget {
                   'reviews': '1.5k',
                   'sales': '9k',
                   'rating': 5,
+                  'img': 'assets/img/zeldanes.png'
                 },
                 {
                   'title': 'Street Fighter II - SNES',
@@ -208,6 +245,7 @@ class MainPage extends StatelessWidget {
                   'reviews': '1.2k',
                   'sales': '6k',
                   'rating': 5,
+                  'img': 'assets/img/streetsnes.png'
                 },
                 {
                   'title': 'Sonic the Hedgehog - Sega Genesis',
@@ -215,6 +253,7 @@ class MainPage extends StatelessWidget {
                   'reviews': '850',
                   'sales': '5k',
                   'rating': 4,
+                  'img': 'assets/img/sonicsegagenesis.png'
                 },
                 {
                   'title': 'Mega Man 2 - NES',
@@ -222,6 +261,7 @@ class MainPage extends StatelessWidget {
                   'reviews': '1.3k',
                   'sales': '7k',
                   'rating': 5,
+                  'img': 'assets/img/megamannes.png'
                 },
                 {
                   'title': 'Final Fantasy VII - PlayStation 1',
@@ -229,6 +269,7 @@ class MainPage extends StatelessWidget {
                   'reviews': '3k',
                   'sales': '15k',
                   'rating': 5,
+                  'img': 'assets/img/ff7ps1.png'
                 },
                 {
                   'title': 'Castlevania: Symphony of the Night - PlayStation 1',
@@ -236,6 +277,7 @@ class MainPage extends StatelessWidget {
                   'reviews': '2.5k',
                   'sales': '8k',
                   'rating': 5,
+                  'img': 'assets/img/castlevania.png'
                 },
               ],
             ),
@@ -256,6 +298,7 @@ class MainPage extends StatelessWidget {
                   'reviews': '3k',
                   'sales': '20k',
                   'rating': 5,
+                  'img': 'assets/img/toystory.png'
                 },
                 {
                   'title': 'Monsters, Inc. - VHS',
@@ -263,6 +306,7 @@ class MainPage extends StatelessWidget {
                   'reviews': '2.5k',
                   'sales': '18k',
                   'rating': 5,
+                  'img': 'assets/img/monstrosa.png'
                 },
                 {
                   'title': 'Finding Nemo - VHS',
@@ -270,6 +314,7 @@ class MainPage extends StatelessWidget {
                   'reviews': '3.2k',
                   'sales': '22k',
                   'rating': 4,
+                  'img': 'assets/img/procurandonemo.png'
                 },
                 {
                   'title': 'The Incredibles - VHS',
@@ -277,27 +322,7 @@ class MainPage extends StatelessWidget {
                   'reviews': '2k',
                   'sales': '14k',
                   'rating': 5,
-                },
-                {
-                  'title': 'Up - VHS',
-                  'price': 'R\$ 160.00',
-                  'reviews': '1.8k',
-                  'sales': '12k',
-                  'rating': 5,
-                },
-                {
-                  'title': 'Cars - VHS',
-                  'price': 'R\$ 110.00',
-                  'reviews': '2.1k',
-                  'sales': '15k',
-                  'rating': 4,
-                },
-                {
-                  'title': 'Ratatouille - VHS',
-                  'price': 'R\$ 125.00',
-                  'reviews': '2.3k',
-                  'sales': '17k',
-                  'rating': 5,
+                  'img': 'assets/img/osincriveis.png'
                 },
               ],
             ),

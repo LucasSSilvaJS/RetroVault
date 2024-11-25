@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:retrovault/components/listmenu.dart';
 
 class Product {
   final String title;
@@ -37,35 +38,98 @@ class _PurchaseScreenState extends State<PurchaseScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.black,
-        leading: IconButton(
-          icon: Icon(Icons.menu, color: Colors.white),
-          onPressed: () {},
-        ),
-        title: Text(
-          'Retro Vault',
-          style: TextStyle(
-            fontFamily: 'Inter',
-            fontWeight: FontWeight.bold,
-            fontSize: 19,
-            color: Colors.white,
-          ),
-        ),
-        centerTitle: true,
-        actions: [
-          IconButton(
-            icon: Container(
-              width: 30,
-              height: 30,
-              child: CircleAvatar(
-                backgroundImage: AssetImage('assets/img/avatar.png'),
+      key: _scaffoldKey,
+      drawer: Drawer(
+        backgroundColor: const Color(0xFF2B2B2B),
+        width: double.infinity,
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [
+            Container(
+              height: 75.0, // Ajuste a altura aqui
+              child: DrawerHeader(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    const Text(
+                      'Configurações',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 16.0,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    TextButton(
+                      onPressed: () {
+                        Navigator.of(context).pop();
+                      },
+                      child: const Icon(
+                        Icons.close_rounded,
+                        color: Colors.white,
+                      ),
+                    )
+                  ],
+                ),
               ),
             ),
-            onPressed: () {},
-          ),
-        ],
+            ListMenu(
+              title: 'Página inicial',
+              to: '/mainpage',
+            ),
+            ListMenu(
+              title: 'Minhas compras',
+              to: '/myorders',
+            ),
+            ListMenu(
+              title: 'Carrinho de compra',
+              to: '/shoppingcart',
+            ),
+            ListMenu(
+              title: 'Lista de desejos',
+              to: '/wishlist',
+            ),
+            ListMenu(
+              title: 'Dados pessoais',
+              to: '/perfilpage',
+            ),
+            ListMenu(
+              title: 'Sair',
+              color: Colors.red,
+              to: '/login',
+            ),
+          ],
+        ),
+      ),
+      appBar: AppBar(
+        backgroundColor: const Color(0xFF2B2B2B),
+        automaticallyImplyLeading: false,
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            IconButton(
+              onPressed: () {
+                _scaffoldKey.currentState?.openDrawer();
+              },
+              icon: const Icon(
+                Icons.menu,
+                color: Colors.white,
+              ),
+            ),
+            const Text(
+              'Retro Vault',
+              style: TextStyle(
+                color: Colors.white,
+              ),
+            ),
+            CircleAvatar(
+              radius: 16,
+              backgroundImage: AssetImage('assets/img/avatar.png'),
+            )
+          ],
+        ),
       ),
       body: Stack(
         children: [
@@ -124,7 +188,9 @@ class _PurchaseScreenState extends State<PurchaseScreen> {
                       ),
                       SizedBox(height: 16),
                       buildSectionTitle('Opção de pagamento'),
-                      buildRadioOptions(['Cartão', 'Boleto', 'Pix'], selectedPaymentOption, (value) {
+                      buildRadioOptions(
+                          ['Cartão', 'Boleto', 'Pix'], selectedPaymentOption,
+                          (value) {
                         setState(() {
                           selectedPaymentOption = value!;
                         });
@@ -147,7 +213,9 @@ class _PurchaseScreenState extends State<PurchaseScreen> {
                       buildSeparatorLine(),
                       SizedBox(height: 10),
                       buildSectionTitle('Opção de envio'),
-                      buildRadioOptions(['Envio padrão', 'Envio expresso', 'Envio grátis'], selectedShippingOption, (value) {
+                      buildRadioOptions(
+                          ['Envio padrão', 'Envio expresso', 'Envio grátis'],
+                          selectedShippingOption, (value) {
                         setState(() {
                           selectedShippingOption = value!;
                         });
@@ -156,12 +224,14 @@ class _PurchaseScreenState extends State<PurchaseScreen> {
                       SizedBox(height: 15),
                       buildSectionTitle('Aplicar desconto'),
                       Padding(
-                        padding: const EdgeInsets.only(top: 13.0, left: 8.0, right: 8.0),
+                        padding: const EdgeInsets.only(
+                            top: 13.0, left: 8.0, right: 8.0),
                         child: Column(
                           children: [
                             buildDiscountInput(),
                             SizedBox(height: 15),
-                            buildActionButton(context, 'Comprar', Color(0xFF0E7391)),
+                            buildActionButton(
+                                context, 'Comprar', Color(0xFF0E7391)),
                           ],
                         ),
                       ),
@@ -190,7 +260,8 @@ class _PurchaseScreenState extends State<PurchaseScreen> {
     );
   }
 
-  Widget buildRadioOptions(List<String> options, String groupValue, Function(String?) onChanged) {
+  Widget buildRadioOptions(
+      List<String> options, String groupValue, Function(String?) onChanged) {
     return Column(
       children: options.map((option) {
         return Padding(
@@ -227,7 +298,9 @@ class _PurchaseScreenState extends State<PurchaseScreen> {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 40),
       child: ElevatedButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.pushNamed(context, '/mainpage');
+        },
         style: ElevatedButton.styleFrom(
           backgroundColor: color,
           shape: RoundedRectangleBorder(

@@ -69,11 +69,31 @@ class _ProductViewState extends State<ProductView> {
                 ),
               ),
             ),
-            ListMenu(title: 'Minhas compras'),
-            ListMenu(title: 'Carrinho de compra'),
-            ListMenu(title: 'Lista de desejos'),
-            ListMenu(title: 'Dados pessoais'),
-            ListMenu(title: 'Sair', color: Colors.red),
+            ListMenu(
+              title: 'Página inicial',
+              to: '/mainpage',
+            ),
+            ListMenu(
+              title: 'Minhas compras',
+              to: '/myorders',
+            ),
+            ListMenu(
+              title: 'Carrinho de compra',
+              to: '/shoppingcart',
+            ),
+            ListMenu(
+              title: 'Lista de desejos',
+              to: '/wishlist',
+            ),
+            ListMenu(
+              title: 'Dados pessoais',
+              to: '/perfilpage',
+            ),
+            ListMenu(
+              title: 'Sair',
+              color: Colors.red,
+              to: '/login',
+            ),
           ],
         ),
       ),
@@ -234,7 +254,9 @@ class _ProductViewState extends State<ProductView> {
                                     Color(0xFF0E7391),
                                   ),
                                 ),
-                                onPressed: () {},
+                                onPressed: () {
+                                  Navigator.pushNamed(context, '/shoppingcart');
+                                },
                                 child: Text(
                                   'Carrinho',
                                   style: TextStyle(
@@ -251,9 +273,11 @@ class _ProductViewState extends State<ProductView> {
                                     Color(0xFFE07BB2),
                                   ),
                                 ),
-                                onPressed: () {},
+                                onPressed: () {
+                                  Navigator.pushNamed(context, '/wishlist');
+                                },
                                 child: Text(
-                                  'Carrinho',
+                                  'Lista de desejo',
                                   style: TextStyle(
                                     color: Colors.white,
                                   ),
