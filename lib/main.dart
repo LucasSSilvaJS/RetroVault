@@ -8,6 +8,8 @@ import 'pages/homepage.dart';
 import 'pages/loginpage.dart';
 import 'pages/profileimg.dart';
 import 'pages/mainpage.dart';
+import 'pages/perfilpage.dart';
+import 'pages/purchasepage.dart';
 
 void main() {
   runApp(MyApp());
@@ -30,6 +32,8 @@ class MyApp extends StatelessWidget {
         '/wishlist': (context) => WishList(),
         '/shoppingcart': (context) => ShoppingCart(),
         '/myorders': (context) => MyOrders(),
+        '/perfilpage': (context) => UserProfileScreen(),
+        '/purchasepage': (context) => PurchaseScreen(),
       },
     );
   }
