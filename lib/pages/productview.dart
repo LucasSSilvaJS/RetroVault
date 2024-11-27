@@ -286,6 +286,25 @@ class _ProductViewState extends State<ProductView> {
                             ],
                           ),
                           SizedBox(
+                            height: 10,
+                          ),
+                          ElevatedButton(
+                            style: ButtonStyle(
+                              backgroundColor: WidgetStateProperty.all(
+                                Color(0xFF0E7391),
+                              ),
+                            ),
+                            onPressed: () {
+                              Navigator.pushNamed(context, '/comunity');
+                            },
+                            child: Text(
+                              'Comunidade',
+                              style: TextStyle(
+                                color: Colors.white,
+                              ),
+                            ),
+                          ),
+                          SizedBox(
                             height: 30.0,
                           ),
                           Container(

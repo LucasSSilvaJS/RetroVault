@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:retrovault/pages/comunity.dart';
 import 'package:retrovault/pages/myorders.dart';
 import 'package:retrovault/pages/productview.dart';
 import 'package:retrovault/pages/shoppingcart.dart';
@@ -34,6 +35,7 @@ class MyApp extends StatelessWidget {
         '/myorders': (context) => MyOrders(),
         '/perfilpage': (context) => UserProfileScreen(),
         '/purchasepage': (context) => PurchaseScreen(),
+        '/comunity': (context) => Comunity(),
       },
     );
   }
