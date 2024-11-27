@@ -288,20 +288,6 @@ class _ComunityState extends State<Comunity> {
                                       ),
                                     ),
                                   ),
-                                  Padding(
-                                    padding: EdgeInsets.all(8.0),
-                                    child: Container(
-                                      width: 71.64,
-                                      height: 68,
-                                      decoration: BoxDecoration(
-                                        image: DecorationImage(
-                                          image: AssetImage(
-                                              'assets/img/smiths7.png'),
-                                          fit: BoxFit.cover,
-                                        ),
-                                      ),
-                                    ),
-                                  ),
                                 ],
                               ),
                               SizedBox(
@@ -375,7 +361,6 @@ class _ComunityState extends State<Comunity> {
                                           ),
                                         ),
                                         Container(
-                                          padding: EdgeInsets.all(20),
                                           child: Column(
                                             children: [
                                               Container(

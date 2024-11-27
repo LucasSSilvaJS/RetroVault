@@ -177,7 +177,8 @@ class _ShoppingCartState extends State<ShoppingCart> {
                             height: 20.0,
                           ),
                           WishListItem(
-                            title: 'The Smiths - The queen is dead',
+                            title: 'The Smiths - The queen is dead'
+                                .substring(0, 16),
                             imgTxt: 'assets/img/smiths1.png',
                             price: 'R\$ 150,00',
                           ),

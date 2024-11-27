@@ -413,7 +413,6 @@ class _ProductViewState extends State<ProductView> {
                                       ),
                                     ),
                                     Container(
-                                      padding: EdgeInsets.all(20),
                                       child: Column(
                                         children: [
                                           Container(
@@ -523,7 +522,6 @@ class _ProductViewState extends State<ProductView> {
                                       ),
                                     ),
                                     Container(
-                                      padding: EdgeInsets.all(20),
                                       child: Column(
                                         children: [
                                           Container(
